@@ -1,1 +1,513 @@
-
+Units:
+  g: u
+  l: U
+  tx: g + 4
+  ty: l + 4
+  lg: l + 8
+  lZ: g + 8
+  screwsize: 1.5
+  standoffsize: 2.5
+points:
+  zones:
+    matrix:
+      anchor: 
+        shift: [-150,-25]
+      key:
+        padding: 1.05U
+        spread: 1.05U
+      columns:
+        pinky:
+          rows.mod.skip: true
+          key.column_net: P0
+        extra:
+          key.splay: -1
+          key.stagger: 4
+          key.column_net: P7
+        ring:
+          key.spread: 19.5
+          key.splay: -1.5
+          key.origin: [-12, -19]
+          key.stagger: 4
+          key.column_net: P21
+        middle:
+          key.stagger: 8
+          key.splay: -1
+          key.spread: 20
+          key.column_net: P20
+        index:
+          key.splay: -2
+          key.stagger: -4
+          key.spread: 20
+          key.column_net: P19
+        inner:
+          key.stagger: -2
+          key.column_net: P18
+      rows:
+        bottom:
+          row_net: P9
+        home:
+          row_net: P8
+        top:
+          row_net: P4
+        Num:
+          row_net: P1
+    thumbfan:
+      key:
+        padding: 1.05U
+        spread: 1.05U
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-30.8, -25]
+      columns:
+        near:
+            key.splay: 3
+        home:
+           key.rotate: -2
+           key.spread: 22
+           key.splay: 2
+           key.origin: [10, 250]
+           key.stagger: 
+        far:
+         key.spread: 20
+         key.splay: -8
+         key.origin: [-56, -26]
+         key.rotate: -25
+        new:
+         key.splay: -8
+         key.origin: [-115, -5]
+         key.rotate: -48
+      rows:
+        thumb:
+  rotate: -6
+  mirror:
+   ref: matrix_pinky_home
+   distance: 330
+outlines:
+  key:
+    - what: rectangle
+      where: true
+      size: [u , u]
+  boardright:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: mirror_matrix_inner_Num
+          shift: [ 1.95u, 1.1u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [-1.8u,.85u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [.8u,.8u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [.8u,-.8u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [.5u,-.8u]
+        - ref: mirror_thumbfan_home_thumb 
+          shift: [.4u,-.8u]
+        - ref: mirror_thumbfan_near_thumb
+          shift: [-.8u,-.8u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-.8u,-.8u]
+        - ref: mirror_matrix_pinky_Num 
+          shift: [-.8u,.8u]
+        - ref: mirror_matrix_extra_Num
+          shift: [-.8u,.8u]
+        - ref: mirror_matrix_ring_Num
+          shift: [-.8u,.8u]
+        - ref: mirror_matrix_middle_Num
+          shift: [-.8u,.8u]
+        - ref: mirror_matrix_middle_Num
+          shift: [.8u,.8u]
+        - ref: mirror_matrix_index_Num
+          shift: [ .8u, .8u]
+      fillet: 3
+  boardleft:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: matrix_inner_Num
+          shift: [ 1.95u, 1.1u]
+        - ref: thumbfan_new_thumb
+          shift: [-1.8u,.85u]
+        - ref: thumbfan_new_thumb
+          shift: [.8u,.8u]
+        - ref: thumbfan_new_thumb
+          shift: [.8u,-.8u]
+        - ref: thumbfan_far_thumb
+          shift: [.5u,-.8u]
+        - ref: thumbfan_home_thumb 
+          shift: [.4u,-.8u]
+        - ref: thumbfan_near_thumb
+          shift: [-.8u,-.8u]
+        - ref: matrix_pinky_bottom
+          shift: [-.8u,-.8u]
+        - ref: matrix_pinky_Num 
+          shift: [-.8u,.8u]
+        - ref: matrix_extra_Num
+          shift: [-.8u,.8u]
+        - ref: matrix_ring_Num
+          shift: [-.8u,.8u]
+        - ref: matrix_middle_Num
+          shift: [-.8u,.8u]
+        - ref: matrix_middle_Num
+          shift: [.8u,.8u]
+        - ref: matrix_index_Num
+          shift: [ .8u, .8u]
+      fillet: 3
+  combo:
+    - name: boardleft
+    - operation: add
+      name: boardright
+  combokey:
+    - name: combo
+    - operation: subtract
+      name: key
+  xlBottom:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: matrix_inner_Num
+          shift: [ 2.2u, 1.35u]
+        - ref: thumbfan_new_thumb
+          shift: [-1.65u,1.05u]
+        - ref: thumbfan_new_thumb
+          shift: [1.0u,1.0u]
+        - ref: thumbfan_new_thumb
+          shift: [1.0u,-1.0u]
+        - ref: thumbfan_far_thumb
+          shift: [.5u,-1.0u]
+        - ref: thumbfan_home_thumb 
+          shift: [.4u,-1.0u]
+        - ref: thumbfan_near_thumb
+          shift: [-1.0u,-1.0u]
+        - ref: matrix_pinky_bottom
+          shift: [-1.0u,-1.0u]
+        - ref: matrix_pinky_Num 
+          shift: [-1.0u,1.0u]
+        - ref: matrix_extra_Num
+          shift: [-1.0u,1.0u]
+        - ref: matrix_ring_Num
+          shift: [-1.0u,1.0u]
+        - ref: matrix_middle_Num
+          shift: [-1.0u,1.0u]
+        - ref: matrix_middle_Num
+          shift: [1.0u,1.0u]
+        - ref: matrix_index_Num
+          shift: [ 1.0u, 1.0u]
+      fillet: 3
+  xlBottomM:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: mirror_matrix_inner_Num
+          shift: [ 2.2u, 1.35u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [-1.65u,1.05u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [1.0u,1.0u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [1.0u,-1.0u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [.5u,-1.0u]
+        - ref: mirror_thumbfan_home_thumb 
+          shift: [.4u,-1.0u]
+        - ref: mirror_thumbfan_near_thumb
+          shift: [-1.0u,-1.0u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-1.0u,-1.0u]
+        - ref: mirror_matrix_pinky_Num 
+          shift: [-1.0u,1.0u]
+        - ref: mirror_matrix_extra_Num
+          shift: [-1.0u,1.0u]
+        - ref: mirror_matrix_ring_Num
+          shift: [-1.0u,1.0u]
+        - ref: mirror_matrix_middle_Num
+          shift: [-1.0u,1.0u]
+        - ref: mirror_matrix_middle_Num
+          shift: [1.0u,1.0u]
+        - ref: mirror_matrix_index_Num
+          shift: [ 1.0u, 1.0u]
+      fillet: 3
+  Mounting:
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [matrix_pinky_Num]
+        shift: [.05u,.7u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [matrix_inner_Num]
+        shift: [.1u,.7u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [matrix_inner_bottom]
+        shift: [.8u,-.35u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [thumbfan_new_thumb]
+        shift: [-.75u,u - 15]
+    - what: circle
+      radius: 1.5
+      where: 
+        ref: [matrix_middle_bottom]
+        shift: [-1.1u,-1.5u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [mirror_matrix_pinky_Num]
+        shift: [.05u,.7u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [mirror_matrix_inner_Num]
+        shift: [.1u,.7u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [mirror_matrix_inner_bottom]
+        shift: [.8u,-.35u]
+    - what: circle
+      radius: 1.5
+      where:
+        ref: [mirror_thumbfan_new_thumb]
+        shift: [-.75u,u - 15]
+    - what: circle
+      radius: 1.5
+      where: 
+        ref: [mirror_matrix_middle_bottom]
+        shift: [-1.1u,-1.5u]
+  standoff:
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [matrix_pinky_Num]
+        shift: [.05u,.7u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [matrix_inner_Num]
+        shift: [.1u,.7u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [matrix_inner_bottom]
+        shift: [.8u,-.35u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [thumbfan_new_thumb]
+        shift: [-.75u,u - 15]
+    - what: circle
+      radius: 2.5
+      where: 
+        ref: [matrix_middle_bottom]
+        shift: [-1.1u,-1.5u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [mirror_matrix_pinky_Num]
+        shift: [.05u,.7u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [mirror_matrix_inner_Num]
+        shift: [.1u,.7u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [mirror_matrix_inner_bottom]
+        shift: [.8u,-.35u]
+    - what: circle
+      radius: 2.5
+      where:
+        ref: [mirror_thumbfan_new_thumb]
+        shift: [-.75u,u - 15]
+    - what: circle
+      radius: 2.5
+      where: 
+        ref: [mirror_matrix_middle_bottom]
+        shift: [-1.1u,-1.5u]
+  MountingHole2:
+    - name: standoff
+    - operation: subtract
+      name: Mounting
+  MountingLocation:
+    - name: combokey
+    - operation: subtract
+      name: MountingHole2
+pcbs:
+  combo:
+    outlines:
+      main:
+        outline: combo
+    footprints:
+      mx:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "up"
+        where:
+          ref: matrix_inner_Num
+          shift: [24,1]
+          rotate: -86
+      promicro_2:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: mirror_matrix_inner_Num
+          shift: [24,1]
+          rotate: 94
+      oled:
+        what: oled
+        params:
+          side: "F"
+          SDA: P15
+          SCL: P14
+        where:
+          ref: matrix_inner_Num
+          shift: [19,-20]
+          rotate: 93
+      reset1:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_bottom
+          shift: [38, -17]
+          rotate: -56
+      reset2:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [38, -17]
+          rotate: -56
+      OnOff1:
+        what: slider
+        params:
+          from: raw
+          to: GND
+        where:
+          ref: matrix_ring_Num
+          shift: [2,20]
+          rotate: 21.5
+      OnOff2:
+        what: slider
+        params:
+          from: raw
+          to: GND
+        where:
+          ref: mirror_matrix_ring_Num
+          shift: [2,20]
+          rotate: 21.5
+      RotaryRight:
+        what: rotary
+        params:
+          designator: ROT
+          from: GND
+          to: vcc
+          A: P15
+          B: P14
+          C: GND
+        where: 
+          ref: mirror_matrix_pinky_Num
+      Joystick: 
+        what: oled
+        params:
+          side: "F"
+          SDA: P16
+          SCL: P10
+        where:
+          ref: thumbfan_near_thumb
+      Joystick2:
+        what: oled
+        params:
+          side: "F"
+          SDA: P16
+          SCL: P10
+        where:
+          ref: mirror_thumbfan_near_thumb
+      JstR:
+        what: JST
+        params:
+          side: F
+          pos: VCC
+          NEG: GND
+        where: promicro
+      JstL:
+        what: JST
+        params:
+          side: F
+          pos: VCC
+          NEG: GND
+        where: promicro_2
+cases:
+  bottom:
+    - name: combo
+      extrude: 1
+  XlBottom:
+    - name: xlBottom
+      extrude: 1
+  XlBottomM:
+    - name: xlBottomM
+      extrude: 1
+  _outerWall:
+    - name: xlBottom
+      extrude: 5
+  _outerWallM:
+    - name: xlBottomM
+      extrude: 5
+  _innerWall: 
+    - name: combo
+      extrude: 5
+  Wall:
+    - what: case
+      name: _outerWall
+      operation: add
+    - what: case
+      name: _outerWallM
+      operation: add
+    - what: case
+      name: _innerWall
+      operation: subtract
+  _holes:
+    - name: Mounting
+      extrude: 4
+  _standoffs:
+    - name: standoff
+      extrude: 4
+  Cases:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: bottom
+      operation: add
+    - what: case
+      name: Wall
+      operation: add
+    - what: case
+      name: _holes
+      operation: subtract

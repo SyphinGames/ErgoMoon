@@ -87,6 +87,10 @@ outlines:
     - what: rectangle
       where: true
       size: [u , u]
+  Switches:
+    - what: rectangle
+      where: true
+      size: [15.7, 15.7]
   boardright:
     - what: polygon
       operation: stack
@@ -153,14 +157,92 @@ outlines:
         - ref: matrix_index_Num
           shift: [ .8u, .8u]
       fillet: 3
+  boardrighte:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: mirror_matrix_inner_Num
+          shift: [ 2.507142857u, 1.414285714u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [-2.314285714u,1.092857143u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [1.028571429u,1.028571429u]
+        - ref: mirror_thumbfan_new_thumb
+          shift: [1.028571429u,-1.028571429u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [0.6428571429u,-1.028571429u]
+        - ref: mirror_thumbfan_home_thumb 
+          shift: [0.5142857143u,-1.028571429u]
+        - ref: mirror_thumbfan_near_thumb
+          shift: [-1.028571429u,-1.028571429u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-1.028571429u,-1.028571429u]
+        - ref: mirror_matrix_pinky_Num 
+          shift: [-1.028571429u,1.028571429u]
+        - ref: mirror_matrix_extra_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: mirror_matrix_ring_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: mirror_matrix_middle_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: mirror_matrix_middle_Num
+          shift: [1.028571429u,1.028571429u]
+        - ref: mirror_matrix_index_Num
+          shift: [ 1.028571429u, 1.028571429u]
+      fillet: 3
+  boardlefte:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: matrix_inner_Num
+          shift: [ 2.507142857u, 1.414285714u]
+        - ref: thumbfan_new_thumb
+          shift: [-2.314285714u,1.092857143u]
+        - ref: thumbfan_new_thumb
+          shift: [1.028571429u,1.028571429u]
+        - ref: thumbfan_new_thumb
+          shift: [1.028571429u,-1.028571429u]
+        - ref: thumbfan_far_thumb
+          shift: [0.6428571429u,-1.028571429u]
+        - ref: thumbfan_home_thumb 
+          shift: [0.5142857143u,-1.028571429u]
+        - ref: thumbfan_near_thumb
+          shift: [-1.028571429u,-1.028571429u]
+        - ref: matrix_pinky_bottom
+          shift: [-1.028571429u,-1.028571429u]
+        - ref: matrix_pinky_Num 
+          shift: [-1.028571429u,1.028571429u]
+        - ref: matrix_extra_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: matrix_ring_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: matrix_middle_Num
+          shift: [-1.028571429u,1.028571429u]
+        - ref: matrix_middle_Num
+          shift: [1.028571429u,1.028571429u]
+        - ref: matrix_index_Num
+          shift: [ 1.028571429u, 1.028571429u]
+      fillet: 3
   combo:
     - name: boardleft
     - operation: add
       name: boardright
+  comboWall:
+    - name: boardlefte
+    - operation: add
+      name: boardrighte
   combokey:
     - name: combo
     - operation: subtract
       name: key
+  ComboNoCaps:
+    - name: combo
+    - operation: subtract
+      name: Switches
+  Wallz: 
+    - name: comboWall
+    - operation: subtract
+      name: combo
   xlBottom:
     - what: polygon
       operation: stack
@@ -335,6 +417,10 @@ outlines:
       name: Mounting
   MountingLocation:
     - name: combokey
+    - operation: subtract
+      name: MountingHole2
+  MountingB:
+    - name: combo
     - operation: subtract
       name: MountingHole2
 pcbs:

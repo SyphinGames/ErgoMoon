@@ -1,0 +1,32 @@
+# `U` is a predefined unit of measure that means 19.05mm, which is MX spacing
+points:
+  zones:
+    matrix:
+      columns:
+        pinky:
+      rows:
+        bottom.padding: U
+        home.padding: U
+        top.padding: U
+
+pcbs:
+  simple_split:
+    footprints:
+      keys:
+        what: mx
+        where: true
+        params:
+          from: GND
+          to: "{{name}}"
+          reverse: true
+          keycaps: true
+      Case:
+        
+      rotary:
+        what: rotary
+        where:
+        - ref: matrix_pinky_bottom
+          shift: [0,2U]
+        perams:
+          from: GND
+          to: "{{name}}"
